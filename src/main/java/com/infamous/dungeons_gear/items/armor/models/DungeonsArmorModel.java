@@ -82,6 +82,14 @@ public class DungeonsArmorModel<T extends LivingEntity> extends BipedModel<T> {
         this.armorLeftFoot.mirror = true;
         this.armorLeftFoot.addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, modelSize);
         this.armorLeftFoot.setRotationPoint(1.9F, 12.0F + yOffsetIn, 0.0F);
+
+        // Make model render instance hierarchically 
+        this.bipedHead.addChild(this.armorHead);
+        this.bipedRightArm.addChild(this.armorRightArm);
+        this.bipedRightLeg.addChild(this.armorRightLeg);
+        this.bipedLeftLeg.addChild(this.armorLeftLeg);
+        this.bipedBody.addChild(this.armorBody);
+        this.bipedLeftArm.addChild(this.armorLeftArm);
     }
 
     @Override
